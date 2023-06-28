@@ -1,0 +1,47 @@
+<style>
+
+
+
+.cen{
+    justify-content: center;
+  
+   
+  
+  margin: 40px 50px;
+  
+  border: 3px solid rgb(0, 0, 0);
+  
+  padding: 30px;
+}
+img{
+  position: relative;
+  left: 40%;
+  height: 200px;
+  border: 3px solid rgb(227, 227, 241);
+
+padding: 30px;
+}
+
+</style>
+
+<html>
+        <body>
+            <div class="cen">
+            <form method="POST" enctype="multipart/form-data">
+    
+                {% for i in cr %}
+                
+                    <label>{{i.name}}</label>
+                    <label>{{i.customer}}</label>
+                    
+                    <img src="{{ i.image.url }}" ><br>
+                    <label for=""> {{i.orid}}</label><br>
+                    <a href="{% url 'delcart' i.id %}" class="btn btn-warning">REMOVE</a>
+      
+                {% endfor %}  
+                
+            
+                
+            </form>
+        </div>
+            
